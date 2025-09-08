@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жалоба на нарушение</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://servermon.ru/cdn/attachment/2023/11/4092/_2.jpeg') no-repeat center center/cover;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 42px;
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #c82333;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #a71d2a;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Жалоба на канал @kwivzow_life</h1>
+    <div class="content">
+        <button onclick="sendEmail()">Отправить жалобу</button>
+    </div>
+
+    <script>
+        function sendEmail() {
+            const email = encodeURIComponent("rsoc_in@rkn.gov.ru");
+            const subject = encodeURIComponent("Жалоба на канал @kwivzow_life: угрозы, шантаж и доксинг");
+            const body = encodeURIComponent(
+`Здравствуйте. Сообщаю о нарушениях со стороны пользователя Telegram, владельца канала @kwivzow_life.
+
+1. В канале систематически публикуются угрозы в адрес пользователей, включая угрозы доксинга (разглашения персональных данных).
+2. Администратор использует методы шантажа и психологического давления: жертвы вынуждены извиняться публично, чтобы избежать травли и разглашения их личных данных.
+3. В канал пересылаются личные сообщения жертв, что нарушает их право на тайну переписки.
+4. Эти действия подпадают под ст. 137 УК РФ (нарушение неприкосновенности частной жизни), ст. 163 УК РФ (вымогательство и шантаж), а также ст. 119 УК РФ (угроза причинения вреда).
+
+Ссылки:
+Канал: https://t.me/kwivzow_life
+
+Прошу:
+- Провести проверку деятельности канала @kwivzow_life и его администрации.
+- Ограничить доступ к каналу на территории РФ.
+- Передать материалы в правоохранительные органы для привлечения виновных к ответственности.`
+            );
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
